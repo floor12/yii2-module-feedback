@@ -1,0 +1,41 @@
+{
+  "name": "floor12/yii2-module-feedback",
+  "description": "Feedback form with params and admin controller.",
+  "type": "yii2-module",
+  "minimum-stability": "stable",
+  "keywords": [
+    "floor12",
+    "yii2 module",
+    "yii",
+    "yii2",
+    "yii 2",
+    "user",
+    "feedback",
+    "form"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "floor12",
+      "email": "floor12@floor12.net",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "yiisoft/yii2": "~2.0.13"
+  },
+  "autoload": {
+    "psr-4": {
+      "floor12\\feedback\\": [
+        "src/"
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/floor12/yii2-editmodal"
+    }
+  ]
+}
