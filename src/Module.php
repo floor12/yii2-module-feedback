@@ -12,7 +12,7 @@ class Module extends \yii\base\Module
     /**
      * @var string
      */
-    public $adminlayout = '@app/views/layouts/main';
+    public $adminLayout = '@app/views/layouts/main';
 
     /**
      * @var string

@@ -1,5 +1,31 @@
 <?php
 
 return [
-
+    'Your name' => 'Ваше имя',
+    'Name' => 'Имя',
+    'Phone number' => 'Номер телефона',
+    'Email' => 'Адрес почты',
+    'Your message' => 'Текст сообщения',
+    'Question type' => 'Тип обращения',
+    'Please enter your name.' => 'Пожалуйста, введи ваше имя.',
+    'Your message is blank.' => 'Вы не заполнили текст сообщения.',
+    'Enter your phone number or email address.' => 'Введите ваш телефон или адрес почты.',
+    'New message from contact form' => 'Новое сообщение из формы контактов.',
+    'Close' => 'Закрыть',
+    'Send' => 'Отправить',
+    'Thank you' => 'Спасибо',
+    'Send us a message' => 'Напишите нам',
+    'If you have any questions or suggestions, you can contact us using this form.' => 'Если у вас есть какие-либо вопросы или предложения, вы можете связаться с нами используя эту форму.',
+    'Your message has been successfully sent. We will contact you shortly.' => 'Ваше сообщение успешно отправлено. Мы свяжемся с вами в ближайшее время.',
+    'Feedback requests' => 'Запросы формы обратной связи',
+    'Search' => 'Поиск',
+    'Created at' => 'Время создания',
+    'Status' => 'Статус',
+    'Contacts' => 'Контакты',
+    'Comment' => 'Комментарий',
+    'New' => 'Новое',
+    'Readed' => 'Прочитанное',
+    'all statuses' => 'все статусы',
+    'all types' => 'все типы',
+    'New feedback form message' => 'Новое сообщение из формы обратной связи'
 ];
