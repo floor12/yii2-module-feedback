@@ -1,16 +1,15 @@
 <?php
 
 
-use floor12\Feedback\models\Feedback;
-use floor12\editmodal\EditModalHelper;
-use floor12\phone\PhoneFormatter;
-use kartik\form\ActiveForm;
-use yii\grid\GridView;
-use yii\widgets\Pjax;
 use floor12\editmodal\EditModalColumn;
 use floor12\feedback\assets\FeedbackAdminAsset;
-use floor12\feedback\models\FeedbackType;
+use floor12\Feedback\models\Feedback;
 use floor12\feedback\models\FeedbackStatus;
+use floor12\feedback\models\FeedbackType;
+use floor12\phone\PhoneFormatter;
+use yii\grid\GridView;
+use yii\widgets\ActiveForm;
+use yii\widgets\Pjax;
 
 FeedbackAdminAsset::register($this);
 
