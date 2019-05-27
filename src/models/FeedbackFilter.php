@@ -14,6 +14,8 @@ class FeedbackFilter extends Model
     public $filter;
     public $status;
     public $type;
+    public $date_from;
+    public $date_to;
 
     /**
      * {@inheritdoc}
@@ -21,7 +23,7 @@ class FeedbackFilter extends Model
     public function rules()
     {
         return [
-            ['filter', 'string'],
+            [['filter', 'date_from', 'date_to'], 'string'],
             [['status', 'type'], 'integer']
         ];
     }
@@ -40,6 +42,13 @@ class FeedbackFilter extends Model
             ->andFilterWhere(['=', 'type', $this->type])
             ->andFilterWhere(['OR', ['LIKE', 'email', $this->filter], ['LIKE', 'content', $this->filter], ['LIKE', 'name', $this->filter], ['LIKE', 'phone', $this->filter]]);
 
+        if ($this->date_from)
+            $query->andWhere(['>=', 'created_at', strtotime($this->date_from)]);
+
+        if ($this->date_to)
+            $query->andWhere(['<=', 'created_at', strtotime($this->date_to)]);
+
+        
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => ['defaultOrder' => ['created_at' => SORT_DESC]]

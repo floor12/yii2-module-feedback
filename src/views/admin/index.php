@@ -28,7 +28,29 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="filter-block">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-2">
+                <?= $form->field($model, 'date_from')
+                    ->label(false)
+                    ->widget(\kartik\date\DatePicker::class, [
+                        'pickerButton' => false,
+                        'options' => [
+                            'placeholder' => 'начало периода'
+                        ]
+                    ])
+                ?>
+            </div>
+            <div class="col-md-2">
+                <?= $form->field($model, 'date_to')
+                    ->label(false)
+                    ->widget(\kartik\date\DatePicker::class, [
+                        'pickerButton' => false,
+                        'options' => [
+                            'placeholder' => 'конец периода'
+                        ]
+                    ])
+                ?>
+            </div>
+            <div class="col-md-4">
                 <?= $form->field($model, 'filter')
                     ->label(false)
                     ->textInput([
@@ -37,12 +59,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]);
                 ?>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <?= $form->field($model, 'status')
                     ->label(false)
                     ->dropDownList(FeedbackStatus::listData(), ['prompt' => Yii::t('app.f12.feedback', 'all statuses')]) ?>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <?= $form->field($model, 'type')
                     ->label(false)
                     ->dropDownList(FeedbackType::getList(), ['prompt' => Yii::t('app.f12.feedback', 'all types')]) ?>
