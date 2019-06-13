@@ -4,13 +4,22 @@
 namespace floor12\feedback\models;
 
 
-use floor12\files\components\FileBehaviour;
 use floor12\phone\PhoneValidator;
 use Yii;
-use yii\base\Model;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
+/**
+ * Class Feedback
+ * @package floor12\feedback\models
+ *
+ * @property string $name
+ * @property string $email
+ * @property int $status
+ * @property int $type
+ * @property string $message
+ * @property string $content
+ */
 class Feedback extends ActiveRecord
 {
     const SCENARIO_ADMIN = 'admin';

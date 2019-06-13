@@ -6,12 +6,12 @@
 
 use common\src\form\ContactForm;
 use common\src\form\ContactType;
+use floor12\feedback\models\FeedbackType;
 use frontend\components\View;
+use kartik\select2\Select2;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use \floor12\feedback\models\FeedbackType;
 use yii\widgets\MaskedInput;
-use kartik\select2\Select2;
 
 ?>
 <?php $form = ActiveForm::begin([
@@ -29,7 +29,11 @@ use kartik\select2\Select2;
         <?= Yii::t('app.f12.feedback', 'If you have any questions or suggestions, you can contact us using this form.') ?>
     </p>
 
-    <?= $form->field($model, 'type')->widget(Select2::class, ['data' => FeedbackType::getList()]) ?>
+
+    <?php
+    if (sizeof(FeedbackType::getList()) > 1)
+        echo $form->field($model, 'type')->widget(Select2::class, ['data' => FeedbackType::getList()]);
+    ?>
 
     <div class="row">
         <div class="col-md-4">

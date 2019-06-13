@@ -27,5 +27,6 @@ return [
     'Readed' => 'Прочитанное',
     'all statuses' => 'все статусы',
     'all types' => 'все типы',
-    'New feedback form message' => 'Новое сообщение из формы обратной связи'
+    'New feedback form message' => 'Новое сообщение из формы обратной связи',
+    'Thank you for contact us' => 'Спасибо, что написали нам'
 ];

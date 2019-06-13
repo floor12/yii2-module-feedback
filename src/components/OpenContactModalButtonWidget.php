@@ -12,12 +12,16 @@ class OpenContactModalButtonWidget extends Widget
     /** @var string */
     public $content;
     public $url;
-    public $class = 'btn btn-default';
+    public $cssClass = 'btn btn-default';
 
     public function run()
     {
         EditModalAsset::register($this->getView());
-        return Html::button($this->content, ['onclick' => EditModalHelper::showForm([$this->url]), 'class' => $this->class]);
+
+        return Html::button($this->content, [
+            'onclick' => EditModalHelper::showForm([$this->url]),
+            'class' => $this->cssClass
+        ]);
     }
 
 }
