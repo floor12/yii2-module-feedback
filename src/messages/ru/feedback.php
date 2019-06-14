@@ -28,5 +28,6 @@ return [
     'all statuses' => 'все статусы',
     'all types' => 'все типы',
     'New feedback form message' => 'Новое сообщение из формы обратной связи',
-    'Thank you for contact us' => 'Спасибо, что написали нам'
+    'Thank you for contact us' => 'Спасибо, что написали нам',
+    'Open feedback form' => 'Открыть форму обратно связи'
 ];
