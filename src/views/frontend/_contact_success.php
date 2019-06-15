@@ -17,5 +17,8 @@ use yii\helpers\Html; ?>
 </div>
 
 <div class="modal-footer">
-    <?= Html::button(Yii::t('app.f12.feedback', 'Close'), ['class' => 'btn btn-default modaledit-disable-silent']) ?>
+    <?= Html::button(Yii::t('app.f12.feedback', 'Close'), [
+        'class' => 'btn btn-default',
+        'onclick' => 'return f12editmodal.close();'
+    ]) ?>
 </div>

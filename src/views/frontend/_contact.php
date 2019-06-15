@@ -6,6 +6,7 @@
 
 use common\src\form\ContactForm;
 use common\src\form\ContactType;
+use floor12\editmodal\EditModalHelper;
 use floor12\feedback\models\FeedbackType;
 use frontend\components\View;
 use kartik\select2\Select2;
@@ -16,10 +17,14 @@ use yii\widgets\MaskedInput;
 ?>
 <?php $form = ActiveForm::begin([
     'options' => ['class' => 'modaledit-form'],
-    'enableClientValidation' => false
+    'enableClientValidation' => true
 ]); ?>
 
 <div class="modal-header">
+    <div class="pull-right">
+        <?= EditModalHelper::btnFullscreen(['class' => 'btn btn-default']) ?>
+        <?= EditModalHelper::btnClose(['class' => 'btn btn-default']) ?>
+    </div>
     <h2><span><?= Yii::t('app.f12.feedback', 'Send us a message') ?></span></h2>
 </div>
 
@@ -52,8 +57,8 @@ use yii\widgets\MaskedInput;
 </div>
 
 <div class="modal-footer">
-    <?= Html::button(Yii::t('app.f12.feedback', 'Close'), ['class' => 'btn btn-default modaledit-disable-silent']) ?>
-    <?= Html::submitButton(Yii::t('app.f12.feedback', 'Send'), ['class' => 'btn btn-primary']) ?>
+    <?= Html::button(Yii::t('app.f12.feedback', 'Close'), ['class' => 'btn btn-default', 'onclick' => 'return f12editmodal.close()']) ?>
+    <?= Html::submitButton(Yii::t('app.f12.feedback', 'Send'), ['class' => 'btn btn-primary', 'onclick' => 'return f12editmodal.submit();']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>
