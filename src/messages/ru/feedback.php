@@ -3,6 +3,7 @@
 return [
     'Your name' => 'Ваше имя',
     'Name' => 'Имя',
+    'Company name' => 'Наименование компании',
     'Phone number' => 'Номер телефона',
     'Email' => 'Адрес почты',
     'Your message' => 'Текст сообщения',

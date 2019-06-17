@@ -14,6 +14,7 @@ use yii\db\ActiveRecord;
  * @package floor12\feedback\models
  *
  * @property string $name
+ * @property string $company
  * @property string $email
  * @property int $status
  * @property int $type
@@ -41,7 +42,7 @@ class Feedback extends ActiveRecord
             ['type', 'integer'],
             ['phone', PhoneValidator::class],
             ['email', 'email'],
-            [['name'], 'string', 'max' => 255],
+            [['name', 'company'], 'string', 'max' => 255],
             ['name', 'required', 'message' => Yii::t('app.f12.feedback', 'Please, enter your name.')],
             ['content', 'required', 'message' => Yii::t('app.f12.feedback', 'Your message is blank.')],
             [['content'], 'filter', 'filter' => '\yii\helpers\HtmlPurifier::process', 'on' => self::SCENARIO_ADMIN],
@@ -56,6 +57,7 @@ class Feedback extends ActiveRecord
     {
         return [
             'name' => Yii::t('app.f12.feedback', 'Your name'),
+            'company' => Yii::t('app.f12.feedback', 'Company name'),
             'phone' => Yii::t('app.f12.feedback', 'Phone number'),
             'email' => Yii::t('app.f12.feedback', 'Email'),
             'content' => Yii::t('app.f12.feedback', 'Your message'),
