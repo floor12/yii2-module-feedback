@@ -9,7 +9,6 @@ use common\src\form\ContactType;
 use floor12\editmodal\EditModalHelper;
 use floor12\feedback\models\FeedbackType;
 use frontend\components\View;
-use kartik\select2\Select2;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
@@ -37,7 +36,7 @@ use yii\widgets\MaskedInput;
 
     <?php
     if (sizeof(FeedbackType::getList()) > 1)
-        echo $form->field($model, 'type')->widget(Select2::class, ['data' => FeedbackType::getList()]);
+        echo $form->field($model, 'type')->dropDownList(FeedbackType::getList());
     ?>
 
     <div class="row">

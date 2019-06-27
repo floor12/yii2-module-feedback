@@ -23,7 +23,8 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "yiisoft/yii2": "~2.0.13"
+    "yiisoft/yii2": "~2.0.13",
+    "floro12/yii2-editmodal": "dev-master"
   },
   "autoload": {
     "psr-4": {
