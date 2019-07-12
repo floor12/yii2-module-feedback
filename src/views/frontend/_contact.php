@@ -6,7 +6,7 @@
 
 use common\src\form\ContactForm;
 use common\src\form\ContactType;
-use floor12\editmodal\EditModalHelper;
+use floor12\editmodal\EditModalHelper2;
 use floor12\feedback\models\FeedbackType;
 use frontend\components\View;
 use yii\helpers\Html;
@@ -21,8 +21,8 @@ use yii\widgets\MaskedInput;
 
 <div class="modal-header">
     <div class="pull-right">
-        <?= EditModalHelper::btnFullscreen(['class' => 'btn btn-default']) ?>
-        <?= EditModalHelper::btnClose(['class' => 'btn btn-default']) ?>
+        <?= EditModalHelper2::btnFullscreen(['class' => 'btn btn-default']) ?>
+        <?= EditModalHelper2::btnClose(['class' => 'btn btn-default']) ?>
     </div>
     <h2><span><?= Yii::t('app.f12.feedback', 'Send us a message') ?></span></h2>
 </div>
