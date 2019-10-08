@@ -59,7 +59,7 @@ class FeedbackCreate
             )
             ->setFrom([Yii::$app->params['no-replyEmail'] => Yii::$app->params['no-replyName']])
             ->setTo($this->model->email)
-            ->setSubject(\Yii::t('app.feedback', 'Thank you for contact us'))
+            ->setSubject(\Yii::t('app.f12.feedback', 'Thank you for contact us'))
             ->send();
     }
 

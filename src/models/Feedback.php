@@ -47,8 +47,12 @@ class Feedback extends ActiveRecord
             ['content', 'required', 'message' => Yii::t('app.f12.feedback', 'Your message is blank.')],
             [['content'], 'filter', 'filter' => '\yii\helpers\HtmlPurifier::process', 'on' => self::SCENARIO_ADMIN],
             ['status', 'integer', 'on' => self::SCENARIO_ADMIN],
-            ['email', 'required', 'when' => Yii::$app->getModule('feedback')->emailRequired],
-            ['phone', 'required', 'when' => Yii::$app->getModule('feedback')->phoneRequired],
+            ['email', 'required', 'when' => function () {
+                return Yii::$app->getModule('feedback')->emailRequired;
+            }],
+            ['phone', 'required', 'when' => function () {
+                return Yii::$app->getModule('feedback')->phoneRequired;
+            }],
         ];
     }
 
