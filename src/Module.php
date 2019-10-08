@@ -3,6 +3,7 @@
 namespace floor12\feedback;
 
 use Yii;
+
 /**
  * feedback module definition class
  * @property  string $editRole
@@ -17,12 +18,12 @@ class Module extends \yii\base\Module
     /**
      * @var string
      */
-    public $viewForm= '@vendor/floor12/yii2-module-feedback/src/views/frontend/_form';
+    public $viewForm = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_form';
 
     /**
      * @var string
      */
-    public $viewResult= '@vendor/floor12/yii2-module-feedback/src/views/frontend/_result';
+    public $viewResult = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_result';
 
     /**
      * @var string
@@ -37,6 +38,14 @@ class Module extends \yii\base\Module
      * @var string
      */
     public $adminRoles = ['@'];
+    /**
+     * @var bool
+     */
+    public $emailRequired = false;
+    /**
+     * @var bool
+     */
+    public $phoneRequired = false;
 
     /**
      * @inheritdoc
