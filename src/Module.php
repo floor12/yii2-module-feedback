@@ -18,12 +18,12 @@ class Module extends \yii\base\Module
     /**
      * @var string
      */
-    public $viewForm = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_form';
+    public $viewForm = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_contact';
 
     /**
      * @var string
      */
-    public $viewResult = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_result';
+    public $viewResult = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_contact_success';
 
     /**
      * @var string
