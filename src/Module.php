@@ -35,6 +35,14 @@ class Module extends \yii\base\Module
      */
     public $viewSuccessEmbedded = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_success_embedded';
     /**
+     * @var string
+     */
+    public $viewMailUserTemplate = '@vendor/floor12/yii2-module-feedback/src/views/mail/admin_info_new_feedback';
+    /**
+     * @var string
+     */
+    public $viewMailAdminTemplate = '@vendor/floor12/yii2-module-feedback/src/views/mail/user_thanks.php';
+    /**
      * @inheritdoc
      */
     public $controllerNamespace = 'floor12\feedback\controllers';

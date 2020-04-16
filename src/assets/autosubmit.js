@@ -7,12 +7,13 @@ $(document).on('keyup', 'form.autosubmit', function () {
 });
 
 function submitForm(form) {
-    method = form.attr('method');
-    action = form.attr('action');
-    container = form.data('container');
+    let method = form.attr('method');
+    let action = form.attr('action');
+    let container = form.data('container');
     $.pjax.reload({
         url: action,
         method: method,
+        timeout: 10000,
         container: container,
         data: form.serialize()
     })

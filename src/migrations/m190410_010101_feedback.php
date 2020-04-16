@@ -1,6 +1,8 @@
 <?php
 
-class m190410_010101_feedback extends \yii\db\Migration
+use yii\db\Migration;
+
+class m190410_010101_feedback extends Migration
 {
 
 

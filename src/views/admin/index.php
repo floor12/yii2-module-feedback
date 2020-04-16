@@ -7,6 +7,7 @@ use floor12\Feedback\models\Feedback;
 use floor12\feedback\models\FeedbackStatus;
 use floor12\feedback\models\FeedbackType;
 use floor12\phone\PhoneFormatter;
+use kartik\date\DatePicker;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
@@ -31,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-2">
                 <?= $form->field($model, 'date_from')
                     ->label(false)
-                    ->widget(\kartik\date\DatePicker::class, [
+                    ->widget(DatePicker::class, [
                         'pickerButton' => false,
                         'options' => [
                             'placeholder' => 'начало периода'
@@ -42,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-2">
                 <?= $form->field($model, 'date_to')
                     ->label(false)
-                    ->widget(\kartik\date\DatePicker::class, [
+                    ->widget(DatePicker::class, [
                         'pickerButton' => false,
                         'options' => [
                             'placeholder' => 'конец периода'

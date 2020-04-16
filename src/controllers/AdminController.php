@@ -3,11 +3,12 @@
 namespace floor12\feedback\controllers;
 
 
+use floor12\editmodal\DeleteAction;
+use floor12\editmodal\EditModalAction;
+use floor12\editmodal\IndexAction;
 use floor12\feedback\models\Feedback;
 use floor12\feedback\models\FeedbackFilter;
-use floor12\editmodal\DeleteAction;
-use floor12\editmodal\IndexAction;
-use floor12\editmodal\EditModalAction;
+use floor12\feedback\Module;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -20,6 +21,11 @@ use yii\web\Controller;
 class AdminController extends Controller
 {
     /**
+     * @var Module
+     */
+    protected $feedbackModule;
+
+    /**
      * {@inheritdoc}
      */
     public function behaviors()
@@ -30,7 +36,7 @@ class AdminController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => Yii::$app->getModule('feedback')->adminRoles,
+                        'roles' => $this->feedbackModule->adminRoles,
                     ]
                 ]
             ],
@@ -50,9 +56,9 @@ class AdminController extends Controller
      */
     public function init()
     {
-        $this->layout = Yii::$app->getModule('feedback')->adminLayout;
+        $this->feedbackModule = Yii::$app->getModule('feedback');
+        $this->layout = $this->feedbackModule->adminLayout;
     }
-
 
     /**
      * {@inheritdoc}

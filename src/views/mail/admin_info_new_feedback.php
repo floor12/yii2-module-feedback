@@ -1,6 +1,6 @@
 <?php
 
-use common\src\form\Feedback;
+use floor12\feedback\models\Feedback;
 use floor12\phone\PhoneFormatter;
 use yii\web\View;
 

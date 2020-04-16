@@ -4,6 +4,7 @@
 namespace floor12\feedback\models;
 
 
+use floor12\feedback\Module;
 use floor12\phone\PhoneValidator;
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -24,6 +25,10 @@ use yii\db\ActiveRecord;
 class Feedback extends ActiveRecord
 {
     const SCENARIO_ADMIN = 'admin';
+    /**
+     * @var Module
+     */
+    protected $feedbackModule;
 
     /**
      * {@inheritdoc}
@@ -31,6 +36,15 @@ class Feedback extends ActiveRecord
     public static function tableName()
     {
         return 'feedback';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function init()
+    {
+        $this->feedbackModule = Yii::$app->getModule('feedback');
+        parent::init();
     }
 
     /**
@@ -45,13 +59,13 @@ class Feedback extends ActiveRecord
             [['name', 'company'], 'string', 'max' => 255],
             ['name', 'required', 'message' => Yii::t('app.f12.feedback', 'Please, enter your name.')],
             ['content', 'required', 'message' => Yii::t('app.f12.feedback', 'Your message is blank.')],
-            [['content'], 'filter', 'filter' => '\yii\helpers\HtmlPurifier::process', 'on' => self::SCENARIO_ADMIN],
+            [['content'], 'filter', 'filter' => '\yii\helpers\HtmlPurifier::process'],
             ['status', 'integer', 'on' => self::SCENARIO_ADMIN],
             ['email', 'required', 'when' => function () {
-                return Yii::$app->getModule('feedback')->emailRequired;
+                return $this->feedbackModule->emailRequired;
             }],
             ['phone', 'required', 'when' => function () {
-                return Yii::$app->getModule('feedback')->phoneRequired;
+                return $this->feedbackModule->phoneRequired;
             }],
         ];
     }
@@ -85,41 +99,5 @@ class Feedback extends ActiveRecord
             ]
         ];
     }
-
-    /**
-     * @return bool
-     */
-    public function beforeValidate()
-    {
-        if (!$this->phone && !$this->email) {
-            $this->addError('phone', Yii::t('app.f12.feedback', 'Enter your phone number or email address.'));
-        }
-
-        return parent::beforeValidate();
-    }
-
-    /**
-     * @return bool
-     */
-    public function sendMail()
-    {
-        if (!$this->validate())
-            return false;
-
-
-        Yii::$app
-            ->mailer
-            ->compose(
-                ['html' => "new_contact_message"],
-                ['model' => $this]
-            )
-            ->setFrom([Yii::$app->params['no-replayEmail'] => Yii::$app->params['no-replayName']])
-            ->setSubject(Yii::t('app.f12.feedback', 'New message from contact form'))
-            ->setTo(Yii::$app->params['contactFormEmails'][$this->type])
-            ->send();
-
-        return true;
-    }
-
 
 }

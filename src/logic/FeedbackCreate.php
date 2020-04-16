@@ -4,12 +4,23 @@ namespace floor12\feedback\logic;
 
 use floor12\feedback\models\Feedback;
 use floor12\feedback\models\FeedbackStatus;
+use floor12\feedback\Module;
 use Yii;
 use yii\base\ErrorException;
 
 class FeedbackCreate
 {
+    /**
+     * @var Feedback
+     */
     protected $model;
+    /**
+     * @var Module
+     */
+    protected $module;
+    /**
+     * @var array
+     */
     protected $data = [];
 
     /**
@@ -21,10 +32,11 @@ class FeedbackCreate
     public function __construct(Feedback $model, array $data)
     {
         if (!$model->isNewRecord)
-            throw new ErrorException('This model already saved.');
+            throw new ErrorException('This feedback already saved.');
 
         $this->model = $model;
         $this->data = $data;
+        $this->module = Yii::$app->getModule('feedback');
     }
 
     /**
@@ -39,6 +51,7 @@ class FeedbackCreate
             $this->model->type = 0;
 
         $this->model->on(Feedback::EVENT_AFTER_INSERT, function () {
+            $this->validateParams();
             if ($this->model->email)
                 $this->sendThankEmail();
             $this->sendNotificationEmail();
@@ -55,7 +68,7 @@ class FeedbackCreate
         return Yii::$app
             ->mailer
             ->compose(
-                ['html' => '@vendor/floor12/yii2-module-feedback/src/mail/feedback-thanx.php'],
+                ['html' => $this->module->viewMailUserTemplate],
                 ['model' => $this->model]
             )
             ->setFrom([Yii::$app->params['no-replyEmail'] => Yii::$app->params['no-replyName']])
@@ -72,12 +85,24 @@ class FeedbackCreate
         return Yii::$app
             ->mailer
             ->compose(
-                ['html' => "@vendor/floor12/yii2-module-feedback/src/mail/feedback_request.php"],
+                ['html' => $this->module->viewMailAdminTemplate],
                 ['model' => $this->model]
             )
             ->setFrom([Yii::$app->params['no-replyEmail'] => Yii::$app->params['no-replyName']])
             ->setSubject(Yii::t('app.f12.feedback', 'New feedback form message'))
             ->setTo(Yii::$app->params['contactForm'][$this->model->type]['emails'])
             ->send();
+    }
+
+    /**
+     * @throws ErrorException
+     */
+    protected function validateParams()
+    {
+        if (!empty(Yii::$app->params['no-replyEmail']))
+            throw new ErrorException('Parameter `no-replyEmail` not found in app params.');
+
+        if (!empty(Yii::$app->params['no-replyName']))
+            throw new ErrorException('Parameter `no-replyName` not found in app params.');
     }
 }
