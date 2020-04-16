@@ -14,17 +14,26 @@ class Module extends \yii\base\Module
      * @var string
      */
     public $adminLayout = '@app/views/layouts/main';
-
     /**
      * @var string
      */
-    public $viewForm = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_contact';
-
+    public $frontendLayout = '@app/views/layouts/main';
     /**
      * @var string
      */
-    public $viewResult = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_contact_success';
-
+    public $viewFormModal = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_form_modal_bs';
+    /**
+     * @var string
+     */
+    public $viewFormEmbedded = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_form_embedded';
+    /**
+     * @var string
+     */
+    public $viewSuccessModal = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_success_modal_bs';
+    /**
+     * @var string
+     */
+    public $viewSuccessEmbedded = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_success_embedded';
     /**
      * @var string
      */
@@ -33,7 +42,6 @@ class Module extends \yii\base\Module
      * @inheritdoc
      */
     public $controllerNamespace = 'floor12\feedback\controllers';
-
     /**
      * @var string
      */
@@ -54,8 +62,6 @@ class Module extends \yii\base\Module
     {
         $this->registerTranslations();
     }
-
-
     /**
      *
      */
