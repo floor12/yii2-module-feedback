@@ -5,6 +5,7 @@ namespace floor12\feedback\logic;
 use floor12\feedback\models\Feedback;
 use floor12\feedback\models\FeedbackStatus;
 use Yii;
+use yii\base\ErrorException;
 
 class FeedbackCreate
 {
@@ -15,12 +16,12 @@ class FeedbackCreate
      * FeedbackCreate constructor.
      * @param Feedback $model
      * @param array $data
-     * @throws \yii\base\ErrorException
+     * @throws ErrorException
      */
     public function __construct(Feedback $model, array $data)
     {
         if (!$model->isNewRecord)
-            throw new \yii\base\ErrorException('This model already saved.');
+            throw new ErrorException('This model already saved.');
 
         $this->model = $model;
         $this->data = $data;
@@ -59,7 +60,7 @@ class FeedbackCreate
             )
             ->setFrom([Yii::$app->params['no-replyEmail'] => Yii::$app->params['no-replyName']])
             ->setTo($this->model->email)
-            ->setSubject(\Yii::t('app.f12.feedback', 'Thank you for contact us'))
+            ->setSubject(Yii::t('app.f12.feedback', 'Thank you for contact us'))
             ->send();
     }
 

@@ -35,15 +35,11 @@ class Module extends \yii\base\Module
      */
     public $viewSuccessEmbedded = '@vendor/floor12/yii2-module-feedback/src/views/frontend/_success_embedded';
     /**
-     * @var string
-     */
-    public $userModel = 'app\models\User';
-    /**
      * @inheritdoc
      */
     public $controllerNamespace = 'floor12\feedback\controllers';
     /**
-     * @var string
+     * @var array
      */
     public $adminRoles = ['@'];
     /**
@@ -53,7 +49,7 @@ class Module extends \yii\base\Module
     /**
      * @var bool
      */
-    public $phoneRequired = false;
+    public $phoneRequired = true;
 
     /**
      * @inheritdoc
@@ -62,6 +58,7 @@ class Module extends \yii\base\Module
     {
         $this->registerTranslations();
     }
+
     /**
      *
      */
