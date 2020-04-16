@@ -37,11 +37,11 @@ class Module extends \yii\base\Module
     /**
      * @var string
      */
-    public $viewMailUserTemplate = '@vendor/floor12/yii2-module-feedback/src/views/mail/admin_info.php';
+    public $viewMailUserTemplate = '@vendor/floor12/yii2-module-feedback/src/views/mail/user_thanks.php';
     /**
      * @var string
      */
-    public $viewMailAdminTemplate = '@vendor/floor12/yii2-module-feedback/src/views/mail/user_thanks.php';
+    public $viewMailAdminTemplate = '@vendor/floor12/yii2-module-feedback/src/views/mail/admin_info.php';
     /**
      * @inheritdoc
      */
