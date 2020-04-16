@@ -23,7 +23,8 @@ use yii\web\View;
 <p><?= nl2br($model->content) ?></p>
 
 <?php if (!empty($model->email)): ?>
-    <a href="mailto:<?= $model->email ?>?subject=<?= Yii::t('app.f12.feedback', 'Reply to the feedback form message') ?>&body=жопа">
+    <a href="mailto:<?= $model->email ?>?subject=<?= Yii::t('app.f12.feedback', 'Reply to the feedback form message') ?>&body=<?=
+    Yii::t('app.f12.feedback', 'You wrote:') ?> <?= $model->content ?>">
         Ответить по почте
     </a>
 <?php endif; ?>

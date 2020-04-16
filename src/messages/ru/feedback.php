@@ -31,5 +31,6 @@ return [
     'New feedback form message' => 'Новое сообщение из формы обратной связи',
     'Thank you for contact us' => 'Спасибо, что написали нам',
     'Open feedback form' => 'Открыть форму обратно связи',
-    'Reply to the message from the feedback form' => 'Ответ на сообщение из формы обратной связи'
+    'Reply to the feedback form message' => 'Ответ на сообщение из формы обратной связи',
+    'You wrote:' => 'Вы писали:'
 ];

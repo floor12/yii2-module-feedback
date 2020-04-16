@@ -99,10 +99,10 @@ class FeedbackCreate
      */
     protected function validateParams()
     {
-        if (!empty(Yii::$app->params['no-replyEmail']))
+        if (empty(Yii::$app->params['no-replyEmail']))
             throw new ErrorException('Parameter `no-replyEmail` not found in app params.');
 
-        if (!empty(Yii::$app->params['no-replyName']))
+        if (empty(Yii::$app->params['no-replyName']))
             throw new ErrorException('Parameter `no-replyName` not found in app params.');
     }
 }
