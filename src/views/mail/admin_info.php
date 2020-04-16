@@ -21,3 +21,10 @@ use yii\web\View;
 
 <b>Текст сообщения: </b>
 <p><?= nl2br($model->content) ?></p>
+
+<?php if (!empty($model->email)): ?>
+    <a href="mailto:<?= $model->email ?>?subject=<?= Yii::t('app.f12.feedback', 'Reply to the feedback form message') ?>&body=жопа">
+        Ответить по почте
+    </a>
+<?php endif; ?>
+

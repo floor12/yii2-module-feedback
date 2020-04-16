@@ -37,7 +37,7 @@ class Module extends \yii\base\Module
     /**
      * @var string
      */
-    public $viewMailUserTemplate = '@vendor/floor12/yii2-module-feedback/src/views/mail/admin_info_new_feedback';
+    public $viewMailUserTemplate = '@vendor/floor12/yii2-module-feedback/src/views/mail/admin_info.php';
     /**
      * @var string
      */

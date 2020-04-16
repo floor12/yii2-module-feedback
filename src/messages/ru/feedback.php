@@ -30,5 +30,6 @@ return [
     'all types' => 'все типы',
     'New feedback form message' => 'Новое сообщение из формы обратной связи',
     'Thank you for contact us' => 'Спасибо, что написали нам',
-    'Open feedback form' => 'Открыть форму обратно связи'
+    'Open feedback form' => 'Открыть форму обратно связи',
+    'Reply to the message from the feedback form' => 'Ответ на сообщение из формы обратной связи'
 ];

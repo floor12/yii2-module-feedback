@@ -62,9 +62,13 @@ $ ./yii migrate --migrationPath=@vendor/floor12/yii2-module-feedback/src/migrati
 ` - алиас пути к view формы для встраивания в страницу или показу на отдельной странице, по умолчанию `@vendor/floor12/yii2
 -module-feedback/src/views/frontend/_form_embedded`;
 5. `viewSuccessModal` - алиас пути к view, отдаваемому в модальное окно при успешной отправки обращения, по умолчанию `@vendor/floor12/yii2-module-feedback/src/views/frontend/_success_modal_bs`;
-5. `viewSuccessEmbedded` - алиас пути к view, отдаваемому клиенру при успешной отправки обращения, по умолчанию `@vendor/floor12/yii2-module
-5. `emailRequired ` - является ли `email` обязательным полем, по умолчанию `false`;
-5. `phoneRequired ` - является ли `phone` обязательным полем, по умолчанию `true`;
+6. `viewSuccessEmbedded` - алиас пути к view, отдаваемому клиенту при успешной отправки обращения, по умолчанию `@vendor/floor12/yii2
+-module-feedback/src/views/frontend/_success_ebedded`;
+7. `viewMailUserTemplate` - алиас пути к шаблону письма для благодарности пользователю, по умолчанию `@vendor/floor12/yii2-module
+-feedback/src/views/mail/_user_thanks.php`;
+8. `viewMailAdminTemplate` - алиас пути к view, отдаваемому клиенру при успешной отправки обращения, по умолчанию `@vendor/floor12/yii2-module-feedback/src/views/mail/_admin_info.php`;
+9. `emailRequired ` - является ли `email` обязательным полем, по умолчанию `false`;
+10. `phoneRequired ` - является ли `phone` обязательным полем, по умолчанию `true`;
 
 ### Темы запросов и адреса для уведомлений
 

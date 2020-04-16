@@ -1,16 +1,15 @@
 <?php
 /**
  * @var $this View
- * @var $model ContactForm
+ * @var $model Feedback
  */
 
-use common\src\form\ContactForm;
-use common\src\form\ContactType;
 use floor12\editmodal\EditModalHelper;
+use floor12\feedback\models\Feedback;
 use floor12\feedback\models\FeedbackType;
 use floor12\fprotector\Fprotector;
-use frontend\components\View;
 use yii\helpers\Html;
+use yii\web\View;
 use yii\widgets\ActiveForm;
 use yii\widgets\MaskedInput;
 
@@ -33,7 +32,7 @@ use yii\widgets\MaskedInput;
     <p>
         <?= Yii::t('app.f12.feedback', 'If you have any questions or suggestions, you can contact us using this form.') ?>
     </p>
-    
+
     <br>
 
     <?= $form->errorSummary($model) ?>

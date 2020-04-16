@@ -17,6 +17,7 @@ use yii\db\ActiveRecord;
  * @property string $name
  * @property string $company
  * @property string $email
+ * @property string $phone
  * @property int $status
  * @property int $type
  * @property string $message

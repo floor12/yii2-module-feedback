@@ -1,14 +1,19 @@
 <?php
-
+/**
+ * @var $this View
+ * @var $model FeedbackFilter
+ */
 
 use floor12\editmodal\EditModalColumn;
 use floor12\feedback\assets\FeedbackAdminAsset;
 use floor12\Feedback\models\Feedback;
+use floor12\feedback\models\FeedbackFilter;
 use floor12\feedback\models\FeedbackStatus;
 use floor12\feedback\models\FeedbackType;
 use floor12\phone\PhoneFormatter;
 use kartik\date\DatePicker;
 use yii\grid\GridView;
+use yii\web\View;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
 
