@@ -2,6 +2,7 @@
 /**
  * @var $this View
  * @var $model Feedback
+ * @var $userAgreementUrl string
  */
 
 use floor12\editmodal\EditModalHelper;
@@ -53,6 +54,15 @@ use yii\widgets\MaskedInput;
     </div>
 
     <?= $form->field($model, 'content')->textarea(['rows' => 4]) ?>
+
+    <?php if ($userAgreementUrl): ?>
+        <p class="f12-feedback-info-block">
+            <?= Yii::t('app.f12.feedback', 'By sending a message you agree to our') ?>
+            <?= Html::a(Yii::t('app.f12.feedback', 'personal data processing policy'), $userAgreementUrl, [
+                'target' => '_blank',
+            ]) ?>.
+        </p>
+    <?php endif; ?>
 
 </div>
 

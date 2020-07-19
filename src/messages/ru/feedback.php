@@ -32,5 +32,7 @@ return [
     'Thank you for contact us' => 'Спасибо, что написали нам',
     'Open feedback form' => 'Открыть форму обратно связи',
     'Reply to the feedback form message' => 'Ответ на сообщение из формы обратной связи',
-    'You wrote:' => 'Вы писали:'
+    'You wrote:' => 'Вы писали:',
+    'By sending a message you agree to our' => 'Отправляя сообщение вы соглашаетесь с нашей',
+    'personal data processing policy' => 'политикой обработки персональных данных',
 ];

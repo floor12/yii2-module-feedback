@@ -37,6 +37,18 @@ $form = ActiveForm::begin(['id' => 'feedback-form']);
 
 <?= Fprotector::checkScript('feedbackForm') ?>
 
-<?= Html::submitButton(Yii::t('app.f12.feedback', 'Send'), ['class' => 'btn btn-primary']) ?>
+<p class="text-right">
+    <?= Html::submitButton(Yii::t('app.f12.feedback', 'Send'), ['class' => 'btn btn-primary']) ?>
+</p>
+
+<?php if ($userAgreementUrl): ?>
+    <p class="f12-feedback-info-block">
+        <?= Yii::t('app.f12.feedback', 'By sending a message you agree to our') ?>
+        <?= Html::a(Yii::t('app.f12.feedback', 'personal data processing policy'), $userAgreementUrl, [
+            'target' => '_blank',
+            'data-pjax' => '0'
+        ]) ?>.
+    </p>
+<?php endif; ?>
 
 <?php ActiveForm::end(); ?>

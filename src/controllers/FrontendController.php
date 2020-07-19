@@ -36,7 +36,10 @@ class FrontendController extends Controller
         $logic = new FeedbackCreate($model, Yii::$app->request->post());
         if (Yii::$app->request->isPost && $logic->execute())
             return $this->renderAjax($this->feedbackModule->viewSuccessEmbedded);
-        return $this->render($this->feedbackModule->viewFormEmbedded, ['model' => $model]);
+        return $this->render($this->feedbackModule->viewFormEmbedded, [
+            'model' => $model,
+            'userAgreementUrl' => $this->module->userAgreementUrl
+        ]);
     }
 
     /**
@@ -51,7 +54,10 @@ class FrontendController extends Controller
         $logic = new FeedbackCreate($model, Yii::$app->request->post());
         if (Yii::$app->request->isPost && $logic->execute())
             return $this->renderAjax($this->feedbackModule->viewSuccessModal);
-        return $this->renderAjax($this->feedbackModule->viewFormModal, ['model' => $model]);
+        return $this->renderAjax($this->feedbackModule->viewFormModal, [
+            'model' => $model,
+            'userAgreementUrl' => $this->module->userAgreementUrl
+        ]);
     }
 
 }

@@ -59,6 +59,9 @@ class Module extends \yii\base\Module
      */
     public $phoneRequired = true;
 
+    /**  @var string */
+    public $userAgreementUrl = '';
+
     /**
      * @inheritdoc
      */
