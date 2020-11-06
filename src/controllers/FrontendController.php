@@ -22,6 +22,7 @@ class FrontendController extends Controller
     public function init()
     {
         $this->feedbackModule = Yii::$app->getModule('feedback');
+        parent::init();
     }
 
     /**
