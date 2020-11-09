@@ -58,6 +58,7 @@ class AdminController extends Controller
     {
         $this->feedbackModule = Yii::$app->getModule('feedback');
         $this->layout = $this->feedbackModule->adminLayout;
+        parent::init();
     }
 
     /**
