@@ -35,6 +35,14 @@ class FeedbackFilter extends Model
      */
     public function dataProvider()
     {
+        return new ActiveDataProvider([
+            'query' => $this->getQuery(),
+            'sort' => ['defaultOrder' => ['created_at' => SORT_DESC]]
+        ]);
+    }
+
+    public function getQuery()
+    {
         $query = Feedback::find()
             ->andFilterWhere(['=', 'status', $this->status])
             ->andFilterWhere(['=', 'type', $this->type])
@@ -46,17 +54,11 @@ class FeedbackFilter extends Model
         if ($this->date_to)
             $query->andWhere(['<=', 'created_at', strtotime($this->date_to)]);
 
-        
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'sort' => ['defaultOrder' => ['created_at' => SORT_DESC]]
-        ]);
 
         if (!$this->validate()) {
             $query->where('0=1');
-            return $dataProvider;
         }
 
-        return $dataProvider;
+        return $query;
     }
 }

@@ -35,4 +35,5 @@ return [
     'You wrote:' => 'Вы писали:',
     'By sending a message you agree to our' => 'Отправляя сообщение вы соглашаетесь с нашей',
     'personal data processing policy' => 'политикой обработки персональных данных',
+    'Export phones' => 'Выгрузить номера',
 ];

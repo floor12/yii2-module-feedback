@@ -61,6 +61,19 @@ class AdminController extends Controller
         parent::init();
     }
 
+    public function actionCsv()
+    {
+        $rows = [];
+        $filter = new FeedbackFilter();
+        $filter->load(Yii::$app->request->get());
+        if ($data = $filter
+            ->getQuery()
+            ->select('phone')
+            ->column()) {
+            Yii::$app->response->sendContentAsFile(implode(PHP_EOL, $data), 'numbers.csv');
+        }
+    }
+
     /**
      * {@inheritdoc}
      */

@@ -16,11 +16,17 @@ use yii\grid\GridView;
 use yii\web\View;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
+use yii\helpers\Html;
 
 FeedbackAdminAsset::register($this);
 
 $this->title = Yii::t('app.f12.feedback', 'Feedback requests');
 $this->params['breadcrumbs'][] = $this->title;
+
+echo Html::button(Yii::t('app.f12.feedback', 'Export phones'), [
+    'onclick' => 'window.open("csv?"+$("#feedbackFilterForm").serialize(), "_blank")',
+    'class' => 'btn btn-primary pull-right btn-sm'
+])
 
 ?>
 
@@ -28,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <?php $form = ActiveForm::begin([
     'method' => 'GET',
+    'id' => 'feedbackFilterForm',
     'options' => ['class' => 'autosubmit', 'data-container' => '#items'],
     'enableClientValidation' => false,
 ]); ?>
