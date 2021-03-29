@@ -49,6 +49,18 @@ class Module extends \yii\base\Module
     /**
      * @var array
      */
+    public $attachmentExtensions = ['jpg', 'jpeg', 'png'];
+    /**
+     * @var bool
+     */
+    public $attachmentEnable = false;
+    /**
+     * @var int
+     */
+    public $attachmentMaxSize = 10000000;
+    /**
+     * @var array
+     */
     public $adminRoles = ['@'];
     /**
      * @var bool

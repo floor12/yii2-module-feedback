@@ -4,9 +4,9 @@
 
 /* @var $form yii\widgets\ActiveForm */
 
+use floor12\feedback\models\FeedbackStatus;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use floor12\feedback\models\FeedbackStatus;
 
 $form = ActiveForm::begin([
     'id' => 'modal-form',
@@ -21,17 +21,25 @@ $form = ActiveForm::begin([
 
     <div class='modal-body'>
 
-        <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'disabled' => true]) ?>
-
-        <?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'disabled' => true]) ?>
-
-        <?= $form->field($model, 'email')->textInput(['maxlength' => true, 'disabled' => true]) ?>
+        <div class="row">
+            <div class="col-md-4">
+                <?= $form->field($model, 'name')->textInput(['maxlength' => true, 'disabled' => true]) ?>
+            </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'phone')->textInput(['maxlength' => true, 'disabled' => true]) ?>
+            </div>
+            <div class="col-md-4">
+                <?= $form->field($model, 'email')->textInput(['maxlength' => true, 'disabled' => true]) ?>
+            </div>
+        </div>
 
         <?= $form->field($model, 'content')->textarea(['rows' => 4, 'disabled' => true]) ?>
 
         <?= $form->field($model, 'comment')->textarea(['rows' => 4]) ?>
 
         <?= $form->field($model, 'status')->dropDownList(FeedbackStatus::listData()) ?>
+
+        <?= $form->field($model, 'files')->widget(\floor12\files\components\FileInputWidget::class) ?>
     </div>
 
     <div class='modal-footer'>

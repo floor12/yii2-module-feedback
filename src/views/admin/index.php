@@ -13,10 +13,10 @@ use floor12\feedback\models\FeedbackType;
 use floor12\phone\PhoneFormatter;
 use kartik\date\DatePicker;
 use yii\grid\GridView;
+use yii\helpers\Html;
 use yii\web\View;
 use yii\widgets\ActiveForm;
 use yii\widgets\Pjax;
-use yii\helpers\Html;
 
 FeedbackAdminAsset::register($this);
 
@@ -124,7 +124,16 @@ echo GridView::widget([
                 return PhoneFormatter::run($model->phone);
             }
         ],
-        'content',
+        [
+            'attribute' => 'content',
+            'content' => function (Feedback $model) {
+                $html = $model->content;
+                if ($model->files) {
+                    $html .= \floor12\files\components\FileListWidget::widget(['files' => $model->files]);
+                }
+                return $html;
+            }
+        ],
         [
             'class' => EditModalColumn::class
         ],

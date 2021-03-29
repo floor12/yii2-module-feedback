@@ -5,6 +5,7 @@ namespace floor12\feedback\models;
 
 
 use floor12\feedback\Module;
+use floor12\files\components\FileBehaviour;
 use floor12\phone\PhoneValidator;
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -68,6 +69,7 @@ class Feedback extends ActiveRecord
             ['phone', 'required', 'when' => function () {
                 return $this->feedbackModule->phoneRequired;
             }],
+            ['files', 'file', 'maxFiles' => 100, 'extensions' => $this->feedbackModule->attachmentExtensions],
         ];
     }
 
@@ -86,6 +88,7 @@ class Feedback extends ActiveRecord
             'created_at' => Yii::t('app.f12.feedback', 'Created at'),
             'status' => Yii::t('app.f12.feedback', 'Status'),
             'comment' => Yii::t('app.f12.feedback', 'Comment'),
+            'files' => Yii::t('app.f12.feedback', 'Attachments'),
         ];
     }
 
@@ -97,6 +100,15 @@ class Feedback extends ActiveRecord
         return [
             'Timestamp' => [
                 'class' => TimestampBehavior::class,
+            ],
+            'files' => [
+                'class' => FileBehaviour::class,
+                'attributes' => [
+                    'files' => [
+                        'maxWidth' => 1920,
+                        'maxHeight' => 1920,
+                    ]
+                ]
             ]
         ];
     }

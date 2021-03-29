@@ -28,6 +28,7 @@
     "floor12/yii2-editmodal": "dev-master",
     "floor12/yii2-phone": "dev-master",
     "floor12/yii2-fprotector": "dev-master",
+    "floor12/yii2-module-files": "dev-master",
     "yii2mod/yii2-enum": "*",
     "kartik-v/yii2-widget-datepicker": "dev-master"
   },
@@ -50,6 +51,10 @@
     {
       "type": "git",
       "url": "https://github.com/floor12/yii2-phone"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/floor12/yii2-module-files"
     },
     {
       "type": "git",
