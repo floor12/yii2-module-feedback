@@ -8,7 +8,7 @@ return [
     'Email' => 'Адрес почты',
     'Your message' => 'Текст сообщения',
     'Question type' => 'Тип обращения',
-    'Please, enter your name.' => 'Пожалуйста, введи ваше имя.',
+    'Please, enter your name.' => 'Пожалуйста, введите ваше имя.',
     'Your message is blank.' => 'Вы не заполнили текст сообщения.',
     'Enter your phone number or email address.' => 'Введите ваш телефон или адрес почты.',
     'New message from contact form' => 'Новое сообщение из формы контактов.',
