@@ -45,7 +45,7 @@ use yii\widgets\MaskedInput;
             <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
         </div>
         <div class="col-md-4">
-            <?= $form->field($model, 'phone')->widget(MaskedInput::class, ['mask' => '+7 (999) 999-99-99']) ?>
+            <?= $form->field($model, 'phone')->textInput() ?>
         </div>
         <div class="col-md-4">
             <?= $form->field($model, 'email') ?>
