@@ -23,9 +23,11 @@ use yii\db\ActiveRecord;
  * @property int $type
  * @property string $message
  * @property string $content
+ * @property string $captcha
  */
 class Feedback extends ActiveRecord
 {
+    public $captcha;
     const SCENARIO_ADMIN = 'admin';
     /**
      * @var Module
@@ -56,6 +58,13 @@ class Feedback extends ActiveRecord
     {
         return [
             ['type', 'integer'],
+            ['captcha', 'string'],
+            ['captcha', 'required', 'when' => function () {
+               return Yii::$app->getModule('feedback')->captchaEnable;
+            }],
+            ['captcha', 'captcha', 'when' => function () {
+                return Yii::$app->getModule('feedback')->captchaEnable;
+            }],
             ['phone', PhoneValidator::class],
             ['email', 'email'],
             [['name', 'company'], 'string', 'max' => 255],

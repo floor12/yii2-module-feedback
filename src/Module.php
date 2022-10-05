@@ -63,6 +63,10 @@ class Module extends \yii\base\Module
      */
     public $adminRoles = ['@'];
     /**
+     * @var boolean
+     */
+    public $captchaEnable = false;
+    /**
      * @var bool
      */
     public $emailRequired = false;
