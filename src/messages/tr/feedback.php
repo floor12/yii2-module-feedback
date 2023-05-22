@@ -1,4 +1,11 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: floor12
+ * Date: 2019-03-25
+ * Time: 19:46
+ */
+
 
 return [
     'Your name' => 'Adınız',
@@ -20,21 +27,21 @@ return [
     'Your message has been successfully sent. We will contact you shortly.' => 'Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.',
     'Feedback requests' => 'Geribildirim talepleri',
     'Search' => 'Ara',
-    'Created at' => 'Oluşturulma tarihi',
+    'Created at' => 'Oluşturma tarihi',
     'Status' => 'Durum',
     'Contacts' => 'İletişim',
     'Comment' => 'Yorum',
     'New' => 'Yeni',
-    'Readed' => 'Okundu',
+    'Readed' => 'Okunmuş',
     'all statuses' => 'tüm durumlar',
     'all types' => 'tüm tipler',
-    'New feedback form message' => 'Yeni geribildirim formu mesajı',
-    'Thank you for contact us' => 'Bize başvurduğunuz için teşekkür ederiz',
-    'Open feedback form' => 'Geribildirim formunu aç',
-    'Reply to the feedback form message' => 'Geribildirim formu mesajına yanıt ver',
-    'You wrote:' => 'Yazdınız:',
-    'By sending a message you agree to our' => 'Bir mesaj göndererek, şartlarımızı kabul etmiş olursunuz:',
-    'personal data processing policy' => 'kişisel verilerin işlenmesi politikası',
+    'New feedback form message' => 'Yeni geri bildirim formu mesajı',
+    'Thank you for contact us' => 'Bize ulaştığınız için teşekkür ederiz',
+    'Open feedback form' => 'Geri bildirim formunu aç',
+    'Reply to the feedback form message' => 'Geri bildirim formu mesajına yanıt ver',
+    'You wrote:' => 'Şunu yazdınız:',
+    'By sending a message you agree to our' => 'Bir mesaj göndererek, bizimle ilgili',
+    'personal data processing policy' => 'kişisel verilerin işlenmesi politikamızı',
     'Export phones' => 'Telefonları dışa aktar',
     'Attachments' => 'Ekler'
 ];
