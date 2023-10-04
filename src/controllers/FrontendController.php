@@ -30,9 +30,11 @@ class FrontendController extends Controller
      * @return string
      * @throws ErrorException
      */
-    public function actionForm($id = 0)
+    public function actionForm($id = 0, $subject = null)
     {
         $model = new Feedback();
+        if (!$model->content && $subject)
+            $model->content = $subject;
         $model->type = (int)$id;
         $logic = new FeedbackCreate($model, Yii::$app->request->post());
         if (Yii::$app->request->isPost && $logic->execute())
@@ -48,9 +50,11 @@ class FrontendController extends Controller
      * @return string
      * @throws ErrorException
      */
-    public function actionFormModal($id = 0)
+    public function actionFormModal($id = 0, $subject = null)
     {
         $model = new Feedback();
+        if (!$model->content && $subject)
+            $model->content = $subject;
         $model->type = (int)$id;
         $logic = new FeedbackCreate($model, Yii::$app->request->post());
         if (Yii::$app->request->isPost && $logic->execute())
